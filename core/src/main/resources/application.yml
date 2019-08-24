@@ -2,6 +2,8 @@ server:
   port: 9701
 
 spring:
+  profiles:
+    active: dev
   application:
     name: integration-app
   datasource:
@@ -13,17 +15,3 @@ spring:
     max-wait: 10000
     min-idle: 5
     initial-size: 5
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9700/eureka/
-mybatis:
-  mapper-locations: classpath:mapper/*/*.xml
-  type-aliases-package: com.kang.core.po
-# 分布式id生成前置条件
-snowflake:
-  worker:
-    id: 1
-  datacenter:
-    id: 1
