@@ -1,0 +1,23 @@
+eureka:
+  instance:
+    non-secure-port: ${server.port:8080}
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9700/eureka/
+# 微服务路由配置
+zuul:
+  routes:
+    int-core:
+      path: /int-order/**
+      serviceId: integration-order
+      sensitiveHeaders: "*"  # 路由时保留head/cookie等
+    int-order:
+      path: /int-core/**
+      serviceId: integration-core
+      sensitiveHeaders: "*"  # 路由时保留head/cookie等
+# ignored-services 需要忽略的服务 ,号分隔  配置后将不会被路由
+# prefix: /v1 请求前缀
+
+
+

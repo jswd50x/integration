@@ -7,7 +7,7 @@ eureka:
       defaultZone: http://localhost:9700/eureka/
 mybatis:
   mapper-locations: classpath:mapper/*/*.xml
-  type-aliases-package: com.kang.core.po
+  type-aliases-package: com.kang.order.po
 # 分布式id生成前置条件
 snowflake:
   worker:
