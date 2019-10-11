@@ -12,9 +12,10 @@ import java.util.Date;
 public class UserController {
     @Autowired
     private UserManager userManager;
+
     @GetMapping(value = "/add")
-    public String addUser(){
-        System.out.printf(DateUtils.format(new Date(),DateUtils.CHN_YMD_HHMM));
+    public String addUser() {
+        System.out.printf(DateUtils.format(new Date(), DateUtils.CHN_YMD_HHMM));
         userManager.addUser();
         return "success";
     }

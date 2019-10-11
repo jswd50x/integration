@@ -3,6 +3,7 @@ package com.kang.core.po.user;
 import lombok.Data;
 
 import java.util.Date;
+
 @Data
 public class UserDO {
     private Long id;

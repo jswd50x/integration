@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.95.70:9700/eureka/
+mybatis:
+  mapper-locations: classpath:mapper/*/*.xml
+  type-aliases-package: com.kang.core.po
+# 分布式id生成前置条件
+snowflake:
+  worker:
+    id: 1
+  datacenter:
+    id: 1

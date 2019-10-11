@@ -1,4 +1,5 @@
 package com.kang.common.util.http;
+
 /**
  * @Desctiption API请求公共常数
  * @Date:2019/3/14 14:34

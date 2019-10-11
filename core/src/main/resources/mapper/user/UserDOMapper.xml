@@ -12,12 +12,12 @@
     </resultMap>
 
     <sql id="table_name">
-     ins_user
+        ins_user
     </sql>
 
     <sql id="Base_Column_List">
-     id, username,
-    deleted, creator, modifier, gmt_created, gmt_modified
+        id, username,
+        deleted, creator, modifier, gmt_created, gmt_modified
     </sql>
 
     <insert id="save" parameterType="com.kang.core.po.user.UserDO">

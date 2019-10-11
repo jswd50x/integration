@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class LongJsonDeserializer extends JsonDeserializer<Long> {
     private static final Logger logger = LoggerFactory.getLogger(LongJsonDeserializer.class);
- 
+
     @Override
     public Long deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         String value = jsonParser.getText();
