@@ -1,19 +1,13 @@
 eureka:
-<<<<<<< HEAD
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.95.70:9700/eureka/
-=======
   instance:
     non-secure-port: ${server.port:8081}
     prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:9700/eureka/
->>>>>>> 8d82db105e0906c7080a23fbac6ddf3ea1e974f5
 mybatis:
   mapper-locations: classpath:mapper/*/*.xml
-  type-aliases-package: com.kang.core.po
+  type-aliases-package: com.kang.order.po
 # 分布式id生成前置条件
 snowflake:
   worker:

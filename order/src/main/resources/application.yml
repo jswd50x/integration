@@ -1,11 +1,9 @@
 server:
-  port: 9701
+  port: 9702
 
 spring:
-  profiles:
-    active: dev
   application:
-    name: integration-core
+    name: integration-order
   profiles:
     active: dev
   datasource:

@@ -1,0 +1,21 @@
+server:
+  port: 9703
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: integration-gateway
+zuul:
+  max:
+    host:
+      connections: 500
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+# 不开启此项 请求分发不生效？
+ribbon:
+  eureka:
+    enabled: true
+
+

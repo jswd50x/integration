@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.order.mapper.order.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.kang.order.po.order.OrderDO">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="order_name" property="orderName" jdbcType="VARCHAR"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+        <result column="creator" property="creator" jdbcType="VARCHAR"/>
+        <result column="modifier" property="modifier" jdbcType="VARCHAR"/>
+        <result column="gmt_created" property="gmtCreated" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="table_name">
+     ins_order
+    </sql>
+
+    <sql id="Base_Column_List">
+     id, order_name,
+    deleted, creator, modifier, gmt_created, gmt_modified
+    </sql>
+
+    <insert id="save" parameterType="com.kang.order.po.order.OrderDO">
+        insert into
+        <include refid="table_name"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="orderName != null">
+                order_name,
+            </if>
+            <if test="deleted != null">
+                deleted,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="modifier != null">
+                modifier,
+            </if>
+            gmt_created,
+            gmt_modified,
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+
+            <if test="orderName != null">
+                #{orderName,jdbcType=VARCHAR},
+            </if>
+
+            <if test="deleted != null">
+                #{deleted,jdbcType=BIT},
+            </if>
+
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="modifier != null">
+                #{modifier,jdbcType=VARCHAR},
+            </if>
+            NOW(),
+            NOW(),
+        </trim>
+    </insert>
+</mapper>

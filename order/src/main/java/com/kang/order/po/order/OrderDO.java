@@ -1,13 +1,15 @@
-package com.kang.core.po.user;
+package com.kang.order.po.order;
 
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class UserDO {
+public class OrderDO {
     private Long id;
-    private String username;
+
+    private String orderName;
+
     private Boolean deleted;
 
     private String creator;
@@ -17,4 +19,5 @@ public class UserDO {
     private Date gmtCreated;
 
     private Date gmtModified;
+
 }
